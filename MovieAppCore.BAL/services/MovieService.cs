@@ -35,9 +35,9 @@ namespace MovieAppCore.BAL.services
             _movieRepository.GetMovieById(movieId);
         }
         //Get GetMovies
-        public void GetMovies()
+        public IEnumerable<Movie> GetMovies()
         {
-            _movieRepository.GetMovies();
+           return _movieRepository.GetMovies();
         }
     }
 }
