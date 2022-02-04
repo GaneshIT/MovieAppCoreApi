@@ -13,5 +13,7 @@ namespace MovieAppCore.DAL.Data
 
         }
         public DbSet<Movie> movie { get; set; }
+
+        public DbSet<MovieShowTimings> movieShowTimings { get; set; }
     }
 }

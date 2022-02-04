@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MovieAppCore.DAL.Data;
 
 namespace MovieAppCore.DAL.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    partial class MovieDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220204134815_addedmovieshowtimings")]
+    partial class addedmovieshowtimings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,7 +47,7 @@ namespace MovieAppCore.DAL.Migrations
 
             modelBuilder.Entity("MovieAppCore.Entity.Models.MovieShowTimings", b =>
                 {
-                    b.Property<int>("MovieShowTimeId")
+                    b.Property<int>("MovieShoTimeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -56,7 +58,7 @@ namespace MovieAppCore.DAL.Migrations
                     b.Property<DateTime>("ShowDateTime")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("MovieShowTimeId");
+                    b.HasKey("MovieShoTimeId");
 
                     b.HasIndex("MovieId");
 
